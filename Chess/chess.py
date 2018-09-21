@@ -1,6 +1,8 @@
+# encoding: utf-8 -*-
 # Chess on Python 2
 
 import string
+import unicodedata
 
 chessBoard = [[1]*9 for i in range(9)]
 # 0th row and column are ignored for ease of notation
@@ -216,11 +218,13 @@ def getBlackPawnMoves(square, chessBoard):
     # Return all possible moves
     return(possibleMoves)
 
-print("Square?")
-square = raw_input()
-possibleMoves = getWhitePawnMoves(square, chessBoard)
-print len(possibleMoves)
-print(possibleMoves)
+#print("Square?")
+#square = raw_input()
+#possibleMoves = getWhitePawnMoves(square, chessBoard)
+#print len(possibleMoves)
+#print(possibleMoves)
+    
+print(unichr(176))
 	
 	
 
