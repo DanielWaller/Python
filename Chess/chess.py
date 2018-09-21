@@ -172,10 +172,53 @@ def getQueenMoves(square, chessBoard):
         
     # Return all possible moves
     return(possibleMoves)
+    
+def getWhitePawnMoves(square, chessBoard):
+    # Return all possible pawn moves (pawn is White)
+    xInd = fileInd_to_xInd[square[0]]
+    yInd = square[1]
+    i,j = xInd,int(yInd)
+    possibleMoves = []
+    
+    # Add all moves advancing one square forward
+    possibleMoves.append([i,j+1])
+    
+    # Add the move 2 squares forward if the rank number is 2
+    if (j== 2):
+        possibleMoves.append([i,4])
+        
+    # Add normal captures
+    
+    # Add en passant captures
+    
+    # Return all possible moves
+    return(possibleMoves)
+
+def getBlackPawnMoves(square, chessBoard):
+    # Return all possible pawn moves (pawn is Black)
+    xInd = fileInd_to_xInd[square[0]]
+    yInd = square[1]
+    i,j = xInd,int(yInd)
+    possibleMoves = []
+    
+    # Add all moves advancing one square forward
+    possibleMoves.append([i,j-1])
+    
+    # Add the move 2 squares forward if the rank number is 2
+    if (j== 7):
+        possibleMoves.append([i,5])
+        
+    # Add normal captures
+    
+    # Add en passant captures
+    
+    
+    # Return all possible moves
+    return(possibleMoves)
 
 print("Square?")
 square = raw_input()
-possibleMoves = getQueenMoves(square, chessBoard)
+possibleMoves = getWhitePawnMoves(square, chessBoard)
 print len(possibleMoves)
 print(possibleMoves)
 	
